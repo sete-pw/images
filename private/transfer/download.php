@@ -6,6 +6,8 @@
 		header('Content-Type: image/jpeg');
 		readfile(DIR_PRIVATE.'image-preview/'.$url.'.jpeg');
 		//echo file_get_contents(DIR_PRIVATE.'image-preview/'.$url.'.gif');
+	}else{
+		
 	}
 
 
