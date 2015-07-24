@@ -17,7 +17,7 @@
 		public function redirect($url){
 			$this->__callAllArray('onRedirect');
 			$this->header('location', $url);
-			$this->systemStop();
+			$this->end();
 		}
 		/**
 		User methods
@@ -44,7 +44,7 @@
 		}
 
 
-		function systemStop(){
+		function end(){
 			$this->__callAllArray('onEnd');
 
 			foreach ($this->__vars['newCookie'] as $key => $value) {print_r($value);
