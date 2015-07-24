@@ -8,6 +8,8 @@
 
 		die;
 		//echo file_get_contents(DIR_PRIVATE.'image-preview/'.$url.'.gif');
+	}else{
+		
 	}
 
 
