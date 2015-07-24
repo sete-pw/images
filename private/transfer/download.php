@@ -4,7 +4,9 @@
 	if ($format == 'preview'){
 
 		header('Content-Type: image/jpeg');
-		readfile(DIR_PRIVATE.'image-preview/'.$url.'.jpeg');
+		echo file_get_contents(DIR_PRIVATE.'data/image-preview/'.$url.'.jpeg');
+
+		die;
 		//echo file_get_contents(DIR_PRIVATE.'image-preview/'.$url.'.gif');
 	}
 
