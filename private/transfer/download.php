@@ -1,15 +1,21 @@
 <?
 	$url = $args['url']; // url картинки из базы
 	$format = $args['format']; // preview или origin.
+	$file = explode('.',$url);
 	if ($format == 'preview'){
+		if (file_exists(DIR_PRIVATE.'data/image-preview/'.$url)){
+			header('Content-Type: image/'.$file[1]);
+			echo file_get_contents(DIR_PRIVATE.'data/image-preview/'.$url);
+			die;
+		}
 
-		header('Content-Type: image/jpeg');
-		echo file_get_contents(DIR_PRIVATE.'data/image-preview/'.$url.'.jpeg');
-
-		die;
-		//echo file_get_contents(DIR_PRIVATE.'image-preview/'.$url.'.gif');
-	}else{
-		
+	}
+	if($format == 'origin'){
+		if (file_exists(DIR_PRIVATE.'data/image/'.$url)) {
+			header('Content-Type: image/' . $file[1]);
+			echo file_get_contents(DIR_PRIVATE . 'data/image/' . $url);
+			die;
+		}
 	}
 
 
