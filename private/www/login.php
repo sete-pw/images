@@ -12,7 +12,7 @@
 	}
 ?>
 
-<form class="form-horizontal" method="POST" action="/login.php">
+<form class="form-horizontal col-md-offset-3 col-md-6" method="POST" action="/login.php">
 	<fieldset>
 		<div class="form-group">
 			<label for="inputEmail" class="col-lg-2 control-label">Email</label>

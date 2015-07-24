@@ -9,7 +9,7 @@
 	CO::RE();
 
 	CO::PROJECT([
-		name => 'Изображения'
+		name => 'WorkImage'
 	]);
 
 	CO::RE()->header('content-type', 'text/html; charset=utf-8');
@@ -60,6 +60,11 @@
 
 		CO::ROUTER()->push('/^file-manager\.php$/', function(){
 			CO::RE()->www('file-manager.php');
+		});
+
+		CO::ROUTER()->push('/^image\/(?P<url>.{32})\/(?P<format>.*)$/', function($args){
+			include DIR_PRIVATE . 'transfer/download.php';
+			CO::RE()->end();
 		});
 
 		CO::ROUTER()->push('/^login\.php$/', function(){

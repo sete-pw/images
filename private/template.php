@@ -53,7 +53,18 @@
 						?>
 						<li><a href="#loginModal" data-toggle="modal" class="text-success"> <span class="glyphicon glyphicon-lock text-success"></span>&nbsp;Войти</a></li>
 						<? 
-							} 
+							}else{
+						?>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user">&nbsp;</span><?=CO::AUTH()->who('name')?><span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li class=""><a href="/user.php"><span class="glyphicon glyphicon-user"></span>&nbsp;Мой аккаунт</a></li>
+								<li class="divider"></li>
+								<li><a href="/logout.php"><span class="glyphicon glyphicon-remove"></span>&nbsp;Выйти</a></li>
+							</ul>
+						</li>
+						<?
+							}
 						?>
 					</ul>
 				</div>

@@ -10,14 +10,30 @@
 			"SELECT *
 			from images
 			where
-				user_id = ?
-		");
+				id_image > ?
+			limit ?;
+		", [
+			['i', $startId],
+			['i', $onPage]
+		]);
 ?>
 
 
+<div class="row">
+	<?
+		foreach($list as $img){
+			$img['url'] = '/image/' . $img['url'];
+			$img['url_preview'] = $img['url'] . '/preview';
+	?>
+	<a href="<?=$img['url']?>" class="col-lg-3">
+		<img src="<?=$img['url_preview']?>" alt="<?=$img['category']?>" style="width:100%;">
+		<strong><?=$img['category']?></strong>
+	</a>
+	<?
+		}
+	?>
+</div>
 
 
 <?
 	}
-?>
-
