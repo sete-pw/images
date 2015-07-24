@@ -5,6 +5,7 @@
 	include(DIR_LIB . 'mysql.php');
 	include(DIR_LIB . 'auth.php');
 	include(DIR_LIB . 'router.php');
+	include(DIR_LIB . 'resize.php');
 
 	CO::RE();
 

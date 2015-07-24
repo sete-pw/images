@@ -1,0 +1,21 @@
+#img-list{
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+	#img-list .item{
+		margin-top: 30px;
+	}
+		#img-list .item .img-container{
+			height: 200px;
+			overflow: hidden;
+			text-align: center;
+			background-color: #000;
+			margin-bottom: 10px;
+		}
+			#img-list .item .img-container img{
+				max-height: 100%;
+				max-width: 100%;
+			}
+		#img-list .item .img-container input[type=text]{
+			width: 100%;
+		}
