@@ -62,8 +62,13 @@
 			CO::RE()->www('file-manager.php');
 		});
 
-		CO::ROUTER()->push('/^image\/(?P<url>.{32})\/(?P<format>.*)$/', function($args){
+		CO::ROUTER()->push('/^image\/(?P<url>.{32}\.[a-zA-Z0-9]*)\/(?P<format>.*)$/', function($args){
 			include DIR_PRIVATE . 'transfer/download.php';
+			CO::RE()->end();
+		});
+
+		CO::ROUTER()->push('/^upload.php$/', function($args){
+			include DIR_PRIVATE . 'transfer/upload.php';
 			CO::RE()->end();
 		});
 
