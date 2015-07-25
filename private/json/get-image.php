@@ -15,7 +15,6 @@ WHERE id_image = ?
 
     if (count($query)==0){
         $dataReturn->status = 'error';
-        echo json_encode($dataReturn);
     }else{
         foreach($query as &$img){
             $img['url'] = '/image/' . $img['url'] . '/origin';
@@ -28,13 +27,13 @@ WHERE id_image = ?
     ",[
             ['i',(int)$data['id']]
         ]);
+
         $dataReturn->status = 'success';
-        $dataReturn->responce = $query;
-        echo json_encode($dataReturn);
+        $dataReturn->response = $query[0];
     }
 }else{
     $dataReturn->status = 'error';
-    echo json_encode($dataReturn);
+    
 }
 
-	
+echo json_encode($dataReturn);

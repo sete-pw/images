@@ -18,9 +18,10 @@ WHERE category = ?
     }
 
     $dataReturn->status = 'success';
-    $dataReturn->responce = $query;
-    echo json_encode($dataReturn);
+    $dataReturn->response = $query;
+    
 }else{
     $dataReturn->status = 'error';
-    echo json_encode($dataReturn);
 }
+
+echo json_encode($dataReturn);
