@@ -22,6 +22,10 @@ $(document).ready(function(){
 							$('<div></div>').addClass('category-container').append(
 								$('<input>').attr('type', 'text').attr('placeholder', 'Категория').attr('value', 'Разное').addClass('form-control').addClass('col-lg-12').attr('name', 'file['+ e.currentTarget.fileId +']')
 							)
+						).append(
+							$('<div></div>').addClass('urlext-container').append(
+								$('<input>').attr('type', 'text').attr('placeholder', 'URL').attr('value', 'http://').addClass('form-control').addClass('col-lg-12').attr('name', 'url_ext['+ e.currentTarget.fileId +']')
+							)
 						)
 					);
 				};

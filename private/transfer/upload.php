@@ -17,15 +17,18 @@
 						"INSERT INTO images
 						(
 							url,
+							url_ext,
 							category,
 							user_id
 						)values(
+							?,
 							?,
 							?,
 							?
 						);
 					", [
 						['s', $url],
+						['s', mb_strtolower(trim(strip_tags(CO::RE()->post['url_ext'][$key])), 'utf-8')],
 						['s', mb_strtolower(trim(strip_tags(CO::RE()->post['file'][$key])), 'utf-8')],
 						['i', CO::AUTH()->who('id_user')]
 					]);

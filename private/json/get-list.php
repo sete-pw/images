@@ -6,7 +6,7 @@ $dataReturn->status = json_decode('{}');
 
 if (isset($data['category'])){
     $query = CO::SQL()->query("
-SELECT id_image as id, url, transition
+SELECT id_image as id, url_ext, transition
 FROM images
 WHERE category = ?
     ",[
