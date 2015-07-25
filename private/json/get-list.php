@@ -14,7 +14,7 @@ WHERE category = ?
     ]);
 
     foreach($query as &$img){
-        $img['url'] = '/image/' . $img['url'] . '/origin';
+        $img['url'] = '/image/' . $img['url'] . '/preview';
     }
 
     $dataReturn->status = 'success';
