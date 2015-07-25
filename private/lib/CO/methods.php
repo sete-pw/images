@@ -47,7 +47,7 @@
 		function end(){
 			$this->__callAllArray('onEnd');
 
-			foreach ($this->__vars['newCookie'] as $key => $value) {print_r($value);
+			foreach ($this->__vars['newCookie'] as $key => $value) {
 				if($this->__vars['cookie'] !== $value['value']){
 					setcookie($key, $value['value'], $value['expire']);
 				}

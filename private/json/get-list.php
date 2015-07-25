@@ -1,16 +1,22 @@
 <?
-$data = CO::RE()->get;
+$data = CO::RE()->post;
+
 $dataReturn = json_decode('{}');
 $dataReturn->status = json_decode('{}');
 
 if (isset($data['category'])){
     $query = CO::SQL()->query("
-SELECT id_image, CONCAT('/preview/',url) as url, transition
+SELECT id_image as id, url, transition
 FROM images
 WHERE category = ?
     ",[
-        ['s',mb_strtolower(strip_tags(trim($data['category'])))]
+        ['s',mb_strtolower(strip_tags(trim($data['category'])), 'utf-8')]
     ]);
+
+    foreach($query as &$img){
+        $img['url'] = '/image/' . $img['url'] . '/origin';
+    }
+
     $dataReturn->status = 'success';
     $dataReturn->responce = $query;
     echo json_encode($dataReturn);

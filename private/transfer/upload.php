@@ -26,7 +26,7 @@
 						);
 					", [
 						['s', $url],
-						['s', strtolower(trim(strip_tags(CO::RE()->post['file'][$key])))],
+						['s', mb_strtolower(trim(strip_tags(CO::RE()->post['file'][$key])), 'utf-8')],
 						['i', CO::AUTH()->who('id_user')]
 					]);
 

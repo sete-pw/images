@@ -38,11 +38,11 @@
 
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class=""><a href="/"><span class="glyphicon glyphicon-home"></span>&nbsp;Загрузить</a></li>
+						<li class=""><a href="/"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;Загрузить</a></li>
 						<? 
 							if(CO::AUTH()->user()){
 						?>
-						<li class=""><a href="/file-manager.php"><span class="glyphicon glyphicon-barcode"></span>&nbsp;Файловый менеджер</a></li>
+						<li class=""><a href="/file-manager.php"><span class="glyphicon glyphicon-th"></span>&nbsp;Файловый менеджер</a></li>
 						<?
 							}
 						?>

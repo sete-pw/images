@@ -1,6 +1,6 @@
 <?
 	if(!CO::AUTH()->user()){
-		redirect('/');
+		CO::RE()->redirect('/login.php');
 	}else{
 
 		CO::RE()->push('js', '/assets/js/upload.js');

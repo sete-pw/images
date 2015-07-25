@@ -20,6 +20,12 @@
 			}
 		}
 
+		function update(){
+			if(!is_null($this->user)){
+				$this->user = $this->getUserById( CO::RE()->cookie['authid'] );
+			}
+		}
+
 		function login($email, $passwd){
 			$user = $this->getUserByEmail( $email );
 

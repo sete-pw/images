@@ -60,16 +60,17 @@
 <div class="row image-list">
 	<?
 		foreach($list as $img){
+			$img['url_view'] = '/view/' . $img['url'];
 			$img['url'] = '/image/' . $img['url'];
 			$img['url_preview'] = $img['url'] . '/preview';
 	?>
 
-	<a href="<?=$img['url']?>" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+	<a href="<?=$img['url_view']?>" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
 		<div class="img-container">
 			<img src="<?=$img['url_preview']?>" class="img" alt="<?=$img['category']?>">
 			<form action="" method="post">
 				<input type="hidden" name="delete" value="<?=$img['id_image']?>">
-				<button class="delete btn btn-danger" title="Удалить это изображение">Удалить</button>
+				<button class="delete btn btn-danger" title="Удалить это изображение">Удалить ( показы: <?=$img['transition']?> ) </button>
 			</form>
 		</div>
 		<h4 class="title" title="<?=$img['category']?>">
